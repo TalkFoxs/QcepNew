@@ -44,19 +44,17 @@ create table usuari(
 
 create table avaluacio(
 	id int primary key auto_increment,
-    proces_id int not null,
 	tipus varchar(10) not null,
     nivell varchar(100) not null,
     valoracio varchar(50) not null,
     planificacio varchar(50) not null,
     accions varchar(50) not null,
-    estrategia varchar(100) not null,
-    foreign key(proces_id) references proces(id)
+    estrategia varchar(100) not null
 );
 
 -- proces 1 : N avaluacio : 1 usuari OK
-create table usuari_proces_avaluacio(
-	avaluacio_id int primary key auto_increment,
+create table responsable(
+	avaluacio_id int primary key,
     usuari_id int not null,
     proces_id int not null,
     foreign key(avaluacio_id) references avaluacio(id),
@@ -82,3 +80,15 @@ create table organitzacio(
     web varchar(100) not null,
     logo varchar(100) not null
 );
+
+-- proveidor/client: qui dona dada al proces
+-- nom i clau
+
+-- sortida: 
+-- nom i clau
+
+-- punt de la norma
+-- primerNum i segundaNum
+
+-- recurs
+-- tipus i descripció
