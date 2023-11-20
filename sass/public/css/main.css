@@ -3,6 +3,7 @@
   margin: 0 auto;
 }
 
+<<<<<<< HEAD
 h4 {
   font-size: 25px;
   font-family: "Pixelify Sans", sans-serif;
@@ -29,10 +30,13 @@ h4 {
   font-size: 25px;
 }
 
+=======
+>>>>>>> 72788cf (Nuevo)
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -53,6 +57,15 @@ header nav {
   -webkit-box-flex: 4;
       -ms-flex-positive: 4;
           flex-grow: 4;
+=======
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  background-color: #f9f0df;
+>>>>>>> 72788cf (Nuevo)
 }
 header nav ul {
   display: -webkit-box;
@@ -62,6 +75,7 @@ header nav ul {
 }
 header nav ul li {
   padding-right: 20px;
+<<<<<<< HEAD
   text-align: center;
 }
 header nav ul li:hover {
@@ -125,4 +139,6 @@ body#home main .button:hover {
 }
 body#home main .button:active {
   background-color: rgba(0, 0, 0, 0.8);
+=======
+>>>>>>> 72788cf (Nuevo)
 }/*# sourceMappingURL=main.css.map */
