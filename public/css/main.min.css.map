@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"sources":["../../sass/base/_base.scss","../../sass/layout/_header.scss"],"names":[],"mappings":"AAAA,EACI,SAAA,CACA,aAAA,CCFJ,OACI,mBAAA,CAAA,mBAAA,CAAA,YAAA,CACA,6BAAA,CAAA,0BAAA,CAAA,4BAAA,CACA,0BAAA,CAAA,uBAAA,CAAA,oBAAA,CACA,wBAAA,CAEI,cACI,mBAAA,CAAA,mBAAA,CAAA,YAAA,CACA,oBAAA,CACA,iBACI,kBAAA","file":"main.min.css"}
+=======
+{"version":3,"sources":["../../sass/base/_base.scss","../../sass/layout/_header.scss"],"names":[],"mappings":"AAAA,EACI,SAAA,CACA,aAAA,CCFJ,OACI,mBAAA,CAAA,mBAAA,CAAA,YAAA,CACA,0BAAA,CAAA,uBAAA,CAAA,oBAAA,CACA,qBAAA,CACA,UAAA,CACA,YAAA,CAEA,WACI,mBAAA,CAAA,mBAAA,CAAA,YAAA,CACA,oBAAA,CAAA,iBAAA,CAAA,wBAAA,CACA,cACI,oBAAA,CACA,iBACI,kBAAA,CACA,iBAAA,CAGJ,uBACI,qBAAA,CACA,UAAA,CACA,iBAAA,CAEJ,oEAGI,UAAA","file":"main.min.css"}
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
