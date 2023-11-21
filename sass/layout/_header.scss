@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 header {
     display: flex;
     align-items: baseline;
@@ -34,17 +35,45 @@ header {
                 color: white;
 =======
 header{
+=======
+header {
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
     display: flex;
-    justify-content: space-evenly;
     align-items: baseline;
-    background-color: #f9f0df;
-    nav{
-        ul{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    h1{
+        flex-grow: 2;
+    }
+    div.idioma,div.Login{
+       padding-right: 100px;
+    }
+    nav {
+        flex-grow: 4;
+        ul {
             display: flex;
             list-style-type: none;
-            li{
+          
+            li {
                 padding-right: 20px;
+<<<<<<< HEAD
 >>>>>>> 72788cf (Nuevo)
+=======
+                text-align: center;
+            }
+
+            li:hover {
+                background-color: white;
+                color: black;
+                border-radius: 5px;
+            }
+            a:link,
+            a:visited,
+            a:active {
+                color: white;
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
             }
         }
     }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body#home {
     main {
         section.presentacion {
@@ -15,6 +16,21 @@ body#home {
             }
 
             p {
+=======
+body#home{
+    main{
+        section.presentacion{
+            text-align: center;
+            h1{
+                font-size: 40px;
+                color: white;
+            }
+            h4{
+                padding-bottom: 10px;
+                color:#AFC966;
+            }
+            p{
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
                 width: 50%;
                 color: white;
                 font-size: 16px;
@@ -22,6 +38,7 @@ body#home {
                 font-weight: 400;
             }
         }
+<<<<<<< HEAD
 
         .present {
 
@@ -49,5 +66,7 @@ body#home {
         .button:active {
             background-color: rgba(0, 0, 0, 0.800);
         }
+=======
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
     }
 }

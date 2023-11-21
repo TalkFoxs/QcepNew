@@ -1,9 +1,13 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0 auto;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
 h4 {
   font-size: 25px;
   font-family: "Pixelify Sans", sans-serif;
@@ -14,6 +18,10 @@ h4 {
   height: 100%;
   background-color: #04252E;
   position: absolute;
+<<<<<<< HEAD
+=======
+  /* 确保特效在内容后面 */
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
   background-image: url("");
   background-size: cover;
   background-position: 50% 50%;
@@ -30,12 +38,16 @@ h4 {
   font-size: 25px;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 72788cf (Nuevo)
+=======
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 <<<<<<< HEAD
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
@@ -66,6 +78,28 @@ header nav {
           align-items: baseline;
   background-color: #f9f0df;
 >>>>>>> 72788cf (Nuevo)
+=======
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+header div.idioma, header div.Login {
+  padding-right: 100px;
+}
+header nav {
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
 }
 header nav ul {
   display: -webkit-box;
@@ -76,6 +110,9 @@ header nav ul {
 header nav ul li {
   padding-right: 20px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
   text-align: center;
 }
 header nav ul li:hover {
@@ -109,7 +146,11 @@ body#home main section.presentacion h1 {
   color: white;
 }
 body#home main section.presentacion h4 {
+<<<<<<< HEAD
   padding: 20px 0px;
+=======
+  padding-bottom: 10px;
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
   color: #AFC966;
 }
 body#home main section.presentacion p {
@@ -118,6 +159,7 @@ body#home main section.presentacion p {
   font-size: 16px;
   line-height: 25px;
   font-weight: 400;
+<<<<<<< HEAD
 }
 body#home main .present {
   background-color: rgba(0, 0, 0, 0.6);
@@ -141,4 +183,6 @@ body#home main .button:active {
   background-color: rgba(0, 0, 0, 0.8);
 =======
 >>>>>>> 72788cf (Nuevo)
+=======
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
 }/*# sourceMappingURL=main.css.map */
