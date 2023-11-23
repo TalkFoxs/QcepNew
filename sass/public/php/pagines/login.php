@@ -85,10 +85,13 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
 <<<<<<< HEAD
 </div>
 <p>Terms of use | Privacy policy</p>
+<<<<<<< HEAD
 =======
 >>>>>>> 2379126 (login)
 =======
 </div>
 >>>>>>> ffcbddf (estructura de login)
+=======
+>>>>>>> 2e5d88b (adios)
 </body>
 </html>
