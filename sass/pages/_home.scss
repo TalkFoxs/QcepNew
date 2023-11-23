@@ -1,0 +1,45 @@
+body#home{
+    main{
+        section.presentacion{
+            text-align: center;
+            h1{
+                font-size: 40px;
+                color: white;
+            }
+            h4{
+                padding: 20px  0px;
+                color:#AFC966;
+
+            }
+            p{
+                width: 50%;
+                color: white;
+                font-size: 16px;
+                line-height: 25px;
+                font-weight: 400;
+            }
+        }
+        .present{
+            width: 50%;
+            background-color: rgba($color: white, $alpha: 0.3);
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+        .img{
+            border-radius: 10px;
+        }
+        .button{
+            padding: 0px 20px 0px 20px;
+            font-size: .7rem;
+            border: 1px solid white;
+            
+        }
+        .button:hover{
+            background-color: rgba(0, 0, 0, 0.500);
+            box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.4);
+        }
+        .button:active{
+            background-color: rgba(0, 0, 0, 0.800);
+        }
+    }
+}
