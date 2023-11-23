@@ -106,8 +106,7 @@ body#home main section.presentacion p {
   font-weight: 400;
 }
 body#home main .present {
-  width: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 100px;
   margin-bottom: 20px;
 }
@@ -121,8 +120,8 @@ body#home main .button {
 }
 body#home main .button:hover {
   background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.4);
-          box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.2);
+          box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.2);
 }
 body#home main .button:active {
   background-color: rgba(0, 0, 0, 0.8);
