@@ -8,6 +8,9 @@ header {
   display: -ms-flexbox;
   display: flex;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 04dc46c (hols)
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -20,6 +23,7 @@ header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
 =======
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
@@ -38,10 +42,13 @@ header nav {
 }
 header nav ul {
 >>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
+=======
+>>>>>>> 04dc46c (hols)
   list-style-type: none;
 }
 header nav ul li {
   padding-right: 20px;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   text-align: center;
@@ -56,4 +63,6 @@ header nav ul a:visited,
 header nav ul a:active {
   color: white;
 >>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
+=======
+>>>>>>> 04dc46c (hols)
 }/*# sourceMappingURL=main.css.map */
