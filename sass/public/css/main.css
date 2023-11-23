@@ -173,9 +173,13 @@ body#home main .present {
 =======
 }
 body#home main .present {
+<<<<<<< HEAD
   width: 50%;
   background-color: rgba(255, 255, 255, 0.3);
 >>>>>>> 7992d68 (Configuracion Basico)
+=======
+  background-color: rgba(0, 0, 0, 0.6);
+>>>>>>> fa94022 (Configuracion basico)
   border-radius: 100px;
   margin-bottom: 20px;
 }
@@ -190,6 +194,7 @@ body#home main .button {
 body#home main .button:hover {
   background-color: rgba(0, 0, 0, 0.5);
 <<<<<<< HEAD
+<<<<<<< HEAD
   -webkit-box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.2);
           box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.2);
 }
@@ -202,6 +207,10 @@ body#home main .button:active {
 =======
   -webkit-box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.4);
           box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.4);
+=======
+  -webkit-box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.2);
+          box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.2);
+>>>>>>> fa94022 (Configuracion basico)
 }
 body#home main .button:active {
   background-color: rgba(0, 0, 0, 0.8);
