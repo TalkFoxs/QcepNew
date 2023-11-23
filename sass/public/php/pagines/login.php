@@ -59,5 +59,6 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
     </form>
     <p><a href="">Create an account</a></p>
 </div>
+<p>Terms of use | Privacy policy</p>
 </body>
 </html>
