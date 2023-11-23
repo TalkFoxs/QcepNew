@@ -42,6 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./login.css">
     <title>Document</title>
@@ -49,20 +50,34 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
 <body>
     <?php include '../template/header.php'?>
     <div class="container">
+=======
+    <title>Document</title>
+</head>
+<body>
+>>>>>>> 2379126 (login)
     <form method="post">
         <input type="text" placeholder="email" id="mail" name="mail">
         <br>
        <span><?php if (isset($error['mail'])) { echo $error['mail']; } ?></span>
+<<<<<<< HEAD
        <br>
         <input type="password" placeholder="password" id="pass" name="pass">
         <br>
         <?php  if (isset($error['pass'])) { echo $error['pass']; }?>
         <br>
+=======
+        <input type="password" placeholder="password" id="pass" name="pass">
+        <br>
+        <?php  if (isset($error['pass'])) { echo $error['pass']; }?>
+>>>>>>> 2379126 (login)
         <input type="submit" id="login" name="login" value="Login">
         <br>
     </form>
     <p><a href="">Create an account</a></p>
+<<<<<<< HEAD
 </div>
 <p>Terms of use | Privacy policy</p>
+=======
+>>>>>>> 2379126 (login)
 </body>
 </html>
