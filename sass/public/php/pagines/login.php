@@ -43,11 +43,15 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <link rel="stylesheet" href="../../css/main.css">
+=======
+>>>>>>> ffcbddf (estructura de login)
     <link rel="stylesheet" href="./login.css">
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     <?php include '../template/header.php'?>
     <div class="container">
 =======
@@ -55,6 +59,9 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
 </head>
 <body>
 >>>>>>> 2379126 (login)
+=======
+    <div class="container">
+>>>>>>> ffcbddf (estructura de login)
     <form method="post">
         <input type="text" placeholder="email" id="mail" name="mail">
         <br>
@@ -75,9 +82,13 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
     </form>
     <p><a href="">Create an account</a></p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </div>
 <p>Terms of use | Privacy policy</p>
 =======
 >>>>>>> 2379126 (login)
+=======
+</div>
+>>>>>>> ffcbddf (estructura de login)
 </body>
 </html>
