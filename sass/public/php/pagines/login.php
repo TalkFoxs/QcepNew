@@ -74,16 +74,22 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
         <br>
        <span><?php if (isset($error['mail'])) { echo $error['mail']; } ?></span>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e27ee12 (login)
        <br>
         <input type="password" placeholder="password" id="pass" name="pass">
         <br>
         <?php  if (isset($error['pass'])) { echo $error['pass']; }?>
         <br>
+<<<<<<< HEAD
 =======
         <input type="password" placeholder="password" id="pass" name="pass">
         <br>
         <?php  if (isset($error['pass'])) { echo $error['pass']; }?>
 >>>>>>> 2379126 (login)
+=======
+>>>>>>> e27ee12 (login)
         <input type="submit" id="login" name="login" value="Login">
         <br>
     </form>
