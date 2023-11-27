@@ -44,14 +44,21 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <link rel="stylesheet" href="../../css/main.css">
 =======
 >>>>>>> ffcbddf (estructura de login)
+=======
+    <link rel="stylesheet" href="../../css/main.css">
+>>>>>>> c999872 (login1)
     <link rel="stylesheet" href="./login.css">
     <title>Document</title>
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c999872 (login1)
     <?php include '../template/header.php'?>
     <div class="container">
 =======
