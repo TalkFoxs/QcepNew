@@ -42,10 +42,12 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./login.css">
     <title>Document</title>
 </head>
 <body>
+    <?php include '../template/header.php'?>
     <div class="container">
     <form method="post">
         <input type="text" placeholder="email" id="mail" name="mail">
@@ -59,5 +61,6 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
     </form>
     <p><a href="">Create an account</a></p>
 </div>
+<p>Terms of use | Privacy policy</p>
 </body>
 </html>
