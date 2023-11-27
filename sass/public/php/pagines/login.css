@@ -21,8 +21,8 @@ input{
 input[type="submit"]{
     display: flex;
     border-radius: 5px;
-   background-color: blue;
-   color: white;
+    background-color: blue;
+    color: white;
 }
 
 p{
