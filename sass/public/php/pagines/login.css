@@ -3,6 +3,7 @@ body{
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 form{
     width: 600px;
     border: 1px solid gainsboro;
@@ -38,6 +39,9 @@ p{
     margin-top: 20px;
 =======
 .container{
+=======
+form{
+>>>>>>> 3f32830 (login)
     width: 600px;
     border: 1px solid gainsboro;
     border-radius: 5px;
@@ -46,25 +50,39 @@ p{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 100px;
 }
+
 
 input{
     padding: 10px;
+<<<<<<< HEAD
     margin: 10px;
 <<<<<<< HEAD
 >>>>>>> ffcbddf (estructura de login)
 =======
+=======
+    margin: 5px;
+}
+
+input:nth-child(1){
+    margin-top: 45px;
+>>>>>>> 3f32830 (login)
 }
 
 input[type="submit"]{
     display: flex;
     border-radius: 5px;
-    background-color: blue;
+    background-color: darkcyan;
     color: white;
 }
 
 p{
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
 >>>>>>> 2e5d88b (adios)
+=======
+    margin-top: 20px;
+>>>>>>> 3f32830 (login)
 }
