@@ -53,9 +53,11 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST["login"])){
         <input type="text" placeholder="email" id="mail" name="mail">
         <br>
        <span><?php if (isset($error['mail'])) { echo $error['mail']; } ?></span>
+       <br>
         <input type="password" placeholder="password" id="pass" name="pass">
         <br>
         <?php  if (isset($error['pass'])) { echo $error['pass']; }?>
+        <br>
         <input type="submit" id="login" name="login" value="Login">
         <br>
     </form>
