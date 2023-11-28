@@ -3,7 +3,6 @@ create database qcep character set utf8mb4 collate utf8mb4_spanish_ci;
 
 use qcep;
 
--- 先创建没有外键依赖的表
 create table usuari(
     username varchar(100) not null,
     email varchar(100) not null,
@@ -47,7 +46,6 @@ create table avaluacio(
     primary key (tipus)
 );
 
--- 然后创建有外键依赖的表
 create table proces (
     id int auto_increment,
     nom varchar(100) not null,
