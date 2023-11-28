@@ -19,6 +19,7 @@ create table usuari(
 
 create table puntNorma(
 	primerNum int not null,
+<<<<<<< HEAD
 =======
 -- 先创建没有外键依赖的表
 =======
@@ -36,15 +37,20 @@ create table puntNorma(
 =======
 	primerNum int not null,
 >>>>>>> 144f283 (Update data_base_creation.sql)
+=======
+>>>>>>> 0dc2b78 (Configuracion BBDD)
     segundaNum int not null,
     primary key(primerNum,segundaNum)
 );
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> c6cd8c9 (fet, fin, crear les taules de base de dates)
 =======
 >>>>>>> 144f283 (Update data_base_creation.sql)
+=======
+>>>>>>> 0dc2b78 (Configuracion BBDD)
 create table proces (
 	nom varchar(100) primary key,
     tipus varchar(100) not null,
@@ -69,6 +75,7 @@ create table document(
     proces_nom varchar(100) not null,
     foreign key(proces_nom) references proces(nom)
 <<<<<<< HEAD
+<<<<<<< HEAD
 );
 
 create table avaluacio(
@@ -89,6 +96,12 @@ create table avaluacio(
 create table avaluacio(
 	tipus varchar(100) not null primary key,
 >>>>>>> 144f283 (Update data_base_creation.sql)
+=======
+);
+
+create table avaluacio(
+	tipus varchar(100) not null primary key,
+>>>>>>> 0dc2b78 (Configuracion BBDD)
     nivell varchar(100) not null,
     valoracio varchar(200) not null,
     planificacio varchar(100) not null,
@@ -99,6 +112,7 @@ create table avaluacio(
 create table avaluacions(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	avaluacio_tipus varchar(200) not null primary key,
 =======
     avaluacio_tipus varchar(100) not null,
@@ -106,6 +120,9 @@ create table avaluacions(
 =======
 	avaluacio_tipus varchar(200) not null primary key,
 >>>>>>> 144f283 (Update data_base_creation.sql)
+=======
+	avaluacio_tipus varchar(200) not null primary key,
+>>>>>>> 0dc2b78 (Configuracion BBDD)
     usuari_username varchar(100) not null,
     proces_nom varchar(100) not null,
     foreign key(avaluacio_tipus) references avaluacio(tipus),
@@ -116,6 +133,7 @@ create table avaluacions(
 create table indicador(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	codi varchar(50) not null primary key,
 =======
     codi varchar(50) not null,
@@ -123,6 +141,9 @@ create table indicador(
 =======
 	codi varchar(50) not null primary key,
 >>>>>>> 144f283 (Update data_base_creation.sql)
+=======
+	codi varchar(50) not null primary key,
+>>>>>>> 0dc2b78 (Configuracion BBDD)
     nom varchar(100) not null,
     link varchar(200) not null,
     curs varchar(50) not null,
@@ -130,12 +151,16 @@ create table indicador(
     proces_nom varchar(100) not null,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 144f283 (Update data_base_creation.sql)
+=======
+>>>>>>> 0dc2b78 (Configuracion BBDD)
 	foreign key(proces_nom) references proces(nom)
 );
 
 create table organitzacio(
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	nom varchar(50) not null,
@@ -146,11 +171,15 @@ create table organitzacio(
 =======
 	nom varchar(50) not null primary key,
 >>>>>>> 144f283 (Update data_base_creation.sql)
+=======
+	nom varchar(50) not null primary key,
+>>>>>>> 0dc2b78 (Configuracion BBDD)
     email varchar(100) not null,
     web varchar(100) not null,
     logo varchar(100) not null
 );
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 -- grupInteres 0,1 : 0,N Sortida
 -- grupInteres 0,1 : 0,N proveidor
@@ -166,6 +195,11 @@ create table grupInteres(
 	nom varchar(100) not null primary key,
     descripcio varchar(300) not null
 >>>>>>> 144f283 (Update data_base_creation.sql)
+=======
+create table grupInteres(
+	nom varchar(100) not null primary key,
+    descripcio varchar(300) not null
+>>>>>>> 0dc2b78 (Configuracion BBDD)
 );
 
 create table proveidor(
@@ -214,8 +248,12 @@ create table apartat(
     descripcio varchar(200) not null,
     link varchar(100) not null
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> c6cd8c9 (fet, fin, crear les taules de base de dates)
 );
 =======
 );
 >>>>>>> 9b3d7de (Corregir errores)
+=======
+);
+>>>>>>> 0dc2b78 (Configuracion BBDD)
