@@ -24,35 +24,27 @@ create table puntNorma(
 =======
 >>>>>>> 144b582 (Configuracion)
 create table usuari(
-    username varchar(100) not null,
+	username varchar(100)primary key,
     email varchar(100) not null,
-    es_administrador boolean not null,
-    primary key (username)
-);
-
-create table organitzacio(
-    nom varchar(50) not null,
-    email varchar(100) not null,
-    web varchar(100) not null,
-    logo varchar(100) not null,
-    primary key (nom)
-);
-
-create table grupInteres(
-    nom varchar(100) not null,
-    descripcio varchar(300) not null,
-    primary key (nom)
+    es_administrador boolean not null
 );
 
 create table puntNorma(
+<<<<<<< HEAD
     primerNum int not null,
 >>>>>>> 9b3d7de (Corregir errores)
+=======
+	primerNum int not null,
+>>>>>>> 144f283 (Update data_base_creation.sql)
     segundaNum int not null,
     primary key(primerNum,segundaNum)
 );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> c6cd8c9 (fet, fin, crear les taules de base de dates)
+=======
+>>>>>>> 144f283 (Update data_base_creation.sql)
 create table proces (
 	nom varchar(100) primary key,
     tipus varchar(100) not null,
@@ -76,6 +68,7 @@ create table document(
     link varchar(200) not null,
     proces_nom varchar(100) not null,
     foreign key(proces_nom) references proces(nom)
+<<<<<<< HEAD
 );
 
 create table avaluacio(
@@ -90,43 +83,31 @@ create table recurs(
 create table avaluacio(
     tipus varchar(100) not null,
 >>>>>>> 9b3d7de (Corregir errores)
+=======
+);
+
+create table avaluacio(
+	tipus varchar(100) not null primary key,
+>>>>>>> 144f283 (Update data_base_creation.sql)
     nivell varchar(100) not null,
     valoracio varchar(200) not null,
     planificacio varchar(100) not null,
     accions varchar(300) not null,
-    estrategia varchar(100) not null,
-    primary key (tipus)
-);
-
-create table proces (
-    id int auto_increment,
-    nom varchar(100) not null,
-    tipus varchar(100) not null,
-    objectiu varchar(300) not null,
-    usuari_username varchar(100) not null,
-    primary key (id),
-    foreign key(usuari_username) references usuari(username)
-);
-
-create table document(
-    id int auto_increment,
-    nom varchar(100) not null,
-    tipus varchar(100) not null,
-    link varchar(200) not null,
-    proces_nom varchar(100) not null,
-    primary key (id),
-    foreign key(proces_nom) references proces(nom)
+    estrategia varchar(100) not null
 );
 
 create table avaluacions(
+<<<<<<< HEAD
 <<<<<<< HEAD
 	avaluacio_tipus varchar(200) not null primary key,
 =======
     avaluacio_tipus varchar(100) not null,
 >>>>>>> 9b3d7de (Corregir errores)
+=======
+	avaluacio_tipus varchar(200) not null primary key,
+>>>>>>> 144f283 (Update data_base_creation.sql)
     usuari_username varchar(100) not null,
     proces_nom varchar(100) not null,
-    primary key(avaluacio_tipus, usuari_username, proces_nom),
     foreign key(avaluacio_tipus) references avaluacio(tipus),
     foreign key(usuari_username) references usuari(username),
     foreign key(proces_nom) references proces(nom)
@@ -134,31 +115,43 @@ create table avaluacions(
 
 create table indicador(
 <<<<<<< HEAD
+<<<<<<< HEAD
 	codi varchar(50) not null primary key,
 =======
     codi varchar(50) not null,
 >>>>>>> 9b3d7de (Corregir errores)
+=======
+	codi varchar(50) not null primary key,
+>>>>>>> 144f283 (Update data_base_creation.sql)
     nom varchar(100) not null,
     link varchar(200) not null,
     curs varchar(50) not null,
     valoracio varchar(100) not null,
     proces_nom varchar(100) not null,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 144f283 (Update data_base_creation.sql)
 	foreign key(proces_nom) references proces(nom)
 );
 
 create table organitzacio(
+<<<<<<< HEAD
 <<<<<<< HEAD
 	nom varchar(50) not null,
 >>>>>>> fe289f7 (base de dades)
 =======
 	nom varchar(50) not null primary key,
 >>>>>>> c6cd8c9 (fet, fin, crear les taules de base de dates)
+=======
+	nom varchar(50) not null primary key,
+>>>>>>> 144f283 (Update data_base_creation.sql)
     email varchar(100) not null,
     web varchar(100) not null,
     logo varchar(100) not null
 );
 
+<<<<<<< HEAD
 -- grupInteres 0,1 : 0,N Sortida
 -- grupInteres 0,1 : 0,N proveidor
 create table grupInteres(
@@ -168,16 +161,22 @@ create table grupInteres(
     primary key (codi),
     foreign key(proces_nom) references proces(nom)
 >>>>>>> 9b3d7de (Corregir errores)
+=======
+create table grupInteres(
+	nom varchar(100) not null primary key,
+    descripcio varchar(300) not null
+>>>>>>> 144f283 (Update data_base_creation.sql)
 );
 
 create table proveidor(
-    grup_nom varchar(100) not null,
+	grup_nom varchar(100) not null,
     proces_nom varchar(100) not null,
     entrada varchar(300) not null,
     primary key(grup_nom,proces_nom),
     foreign key(grup_nom) references grupInteres(nom),
     foreign key(proces_nom) references proces(nom)
 );
+
 create table client(
 	grup_nom varchar(100) not null,
     proces_nom varchar(100) not null,
