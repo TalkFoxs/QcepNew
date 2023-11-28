@@ -5,6 +5,7 @@ use qcep;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 -- process N : N Recurs
 -- proces N : N punt de la norma
 -- proces N : N sortida
@@ -20,6 +21,8 @@ create table puntNorma(
 	primerNum int not null,
 =======
 -- 先创建没有外键依赖的表
+=======
+>>>>>>> 144b582 (Configuracion)
 create table usuari(
     username varchar(100) not null,
     email varchar(100) not null,
@@ -95,7 +98,6 @@ create table avaluacio(
     primary key (tipus)
 );
 
--- 然后创建有外键依赖的表
 create table proces (
     id int auto_increment,
     nom varchar(100) not null,
