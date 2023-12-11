@@ -1,27 +1,19 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  background-color: black;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-header h1 {
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
-}
-header div.idioma, header div.Login {
-  padding-right: 100px;
-}
-header nav {
-  -webkit-box-flex: 4;
-      -ms-flex-positive: 4;
-          flex-grow: 4;
+  background-color: #f9f0df;
 }
 header nav ul {
   display: -webkit-box;
@@ -31,55 +23,4 @@ header nav ul {
 }
 header nav ul li {
   padding-right: 20px;
-  text-align: center;
-}
-header nav ul li:hover {
-  background-color: white;
-  color: black;
-  border-radius: 5px;
-}
-header nav ul a:link,
-header nav ul a:visited,
-header nav ul a:active {
-  color: white;
-}
-
-body#home main section.presentacion {
-  text-align: center;
-}
-body#home main section.presentacion h1 {
-  font-size: 40px;
-  color: white;
-}
-body#home main section.presentacion h4 {
-  padding: 20px 0px;
-  color: #AFC966;
-}
-body#home main section.presentacion p {
-  width: 50%;
-  color: white;
-  font-size: 16px;
-  line-height: 25px;
-  font-weight: 400;
-}
-body#home main .present {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 100px;
-  margin-bottom: 20px;
-}
-body#home main .img {
-  border-radius: 10px;
-}
-body#home main .button {
-  padding: 0px 20px 0px 20px;
-  font-size: 0.7rem;
-  border: 1px solid white;
-}
-body#home main .button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.2);
-          box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.2);
-}
-body#home main .button:active {
-  background-color: rgba(0, 0, 0, 0.8);
 }/*# sourceMappingURL=main.css.map */

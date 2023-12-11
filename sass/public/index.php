@@ -1,19 +1,78 @@
-<?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+<!DOCTYPE html>
+<html lang="en">
 
-session_start();
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <title>Qcep</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+    </style>
+</head>
 
-include 'classes/config/Autoloader.php';
-spl_autoload_register("Autoloader::load");
-$cFront = new FrontController();
-$cFront->dispatch();
-// try {
-  
-// } catch (Exception $e) {
-//     // $vError = new ErrorVista();
-//     // $vError->show($e);
-// }
+<body id="home">
+    <header>
+        <h1>Qcep</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.php">Inicio</a></li>
+                <li><a href="./index.php">Caracteres</a></li>
+                <li><a>Tecnico</a></li>
+                <li><a>Procesos</a></li>
+            </ul>
+        </nav>
+        <div class="idioma">
+            <h4>Idioma</h4>
+            <div style="display: none;">
+                <ul>
+                    <li>Español</li>
+                    <li>Engilsh</li>
+                    <li>Chines</li>
+                </ul>
+            </div>
+        </div>
+        <div class="Login">
+            <h4><a href="./php/pagines/login.php">Login</a></h4>
+            <div style="display: none;">
+                <ul>
+                    <li>Perfil</li>
+                    <li>Missatge</li>
+                    <li>Procesos</li>
+                    <li>Surt</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="presentacion">
+            <div id="particles-js"> </div>
+            <div>
+                <h4><span class="letraYellow">EL SOFTWARE DE LA CALIDAD AL SERVICIO DE LA GESTIÓN</span></h4>
+                <div class="present">
+                    <h1>¡Mantenga el control sobre su
+                    </h1>
+                    <h1>sistema de información y sus documentos!</h1>
+                    <p>
+                        <span class="letraYellow alert">Qcep</span> es una innovadora plataforma de gestión de
+                        documentación diseñada
+                        específicamente para cumplir con los estándares de calidad ISO9001. Nuestro sistema<br>
+                        simplificado se enfoca en la clasificación<br> eficiente y el acceso fácil a todos los
+                        documentos clave del
+                        Sistema de Gestión de Calidad.
+                    </p>
+                    <button class="button" type="button" onclick="alert('Tonto')">Prueba Gratis</button><br>
+                    <img src="./media/IMG/ISO9001.jpg" alt="ISO9001">
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <!-- scripts -->
+    <script src="./js/particles.js"></script>
+    <script src="./js/app.js"></script>
+    <!-- stats.js -->
+    <script src="js/lib/stats.js"></script>
+</body>
 
-?>
+</html>
