@@ -20,8 +20,8 @@ create table proces (
 	nom varchar(100) primary key,
     tipus varchar(100) not null,
     objectiu varchar(300) not null,
-    usuari_username varchar(100) not null,
-    foreign key(usuari_username) references usuari(username)
+    usuari_email varchar(100) not null,
+    foreign key(usuari_email) references usuari(email)
 );
 
 create table proces_te_puntNorma(
