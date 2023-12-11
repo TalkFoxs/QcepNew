@@ -1,0 +1,33 @@
+<?php
+$textos =array(
+    'Bienvenido'=> '欢迎使用 Qcep',
+    'Home' =>'主页',
+    'Menu'  => '菜单',
+    'PHP' =>'关于 PHP',
+    'Exercici'=>'关于作业',
+    'Contactar'=>'联系',
+    'Idioma'=>'语言',
+    'Nombre'=>'名字',
+    'Correo'=>'邮箱',
+    'Opinion'=>'意见',
+    'Comentario'=>'评论',
+    'Enviar'=>'发送',
+    'Login'=>'登录',
+    'registrar'=>'注册',
+    'username'=>'用户',
+    'password'=>'密码',
+    'nom'=>'名字',
+    'cognom'=>'姓',
+    'nacimiento'=>'出生日期',
+    'sexe'=>'性别',
+    'adreca'=>'地址',
+    'codi'=>'邮政编码',
+    'poblacio'=>'镇',
+    'provincia'=>'省',
+    'telèfon'=>'电话号码',
+    'imagen'=>'头像',
+    'logError'=>'你的用户，账户可能是错误的，或者账户不存在',
+    'registrarText'=>'没有账户？立马注册！',
+    'send'=>'发送'
+);
+?>

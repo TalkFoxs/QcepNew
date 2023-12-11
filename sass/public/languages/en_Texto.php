@@ -1,0 +1,33 @@
+<?php
+$textos =array(
+    'Bienvenido'=> 'Welcome to Qcep',
+    'Home' =>'Home',
+    'Menu'  => 'Menu',
+    'PHP' =>'PHP',
+    'Exercici'=>'Informacion Exercici',
+    'Contactar'=>'Contace',
+    'Idioma'=>'Lenguage',
+    'Nombre'=>'Name',
+    'Correo'=>'Email',
+    'Opinion'=>'Opinion',
+    'Comentario'=>'Comment',
+    'Enviar'=>'Send',
+    'Login'=>'Login',
+    'registrar'=>'Register',
+    'username'=>'Usuario',
+    'password'=>'Contraseña',
+    'nom'=>'Name',
+    'cognom'=>'Last Name',
+    'nacimiento'=>'Birth',
+    'sexe'=>'Sex',
+    'adreca'=>'address',
+    'codi'=>'Code',
+    'poblacio'=>'Population',
+    'provincia'=>'Province',
+    'telèfon'=>'Phone',
+    'imagen'=>'Image',
+    'logError'=>'Your user account may be wrong, or the account may not exist.',
+    'registrarText'=>'Don’t have an account? Register now!',
+    'send'=>'Send'
+);
+?>

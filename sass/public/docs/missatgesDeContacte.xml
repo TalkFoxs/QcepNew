@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<REGISTRES>
+
+ 
+
+ 
+ 
+
+ 
+
+<REGISTRE>
+<DATA>10/12/2023</DATA>
+        <ID>6477</ID>
+          <COMENTARI>Proba1</COMENTARI>
+    </REGISTRE> 
+<REGISTRE>
+<DATA>10/12/2023</DATA>
+        <ID>6493</ID>
+          <COMENTARI>Proba 2</COMENTARI>
+    </REGISTRE> 
+<REGISTRE>
+<DATA>10/12/2023</DATA>
+        <ID>6493</ID>
+          <COMENTARI>Proba 333</COMENTARI>
+    </REGISTRE> 
+<REGISTRE>
+<DATA>10/12/2023</DATA>
+        <ID>6499</ID>
+          <COMENTARI>Proba 4</COMENTARI>
+    </REGISTRE> 
+</REGISTRES>

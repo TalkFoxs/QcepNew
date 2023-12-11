@@ -1,30 +1,284 @@
+/* Public */
 * {
-    padding: 0;
-    margin: 0 auto;
+	padding: 0;
+	margin: 0;
 }
 
-h4 {
-    font-size: 25px;
-    font-family: 'Pixelify Sans', sans-serif;
+body {
+	width: 100%;
 }
 
-#particles-js {
+.fixed,
+.left {
+	position: fixed;
+}
+
+.lcentra,
+div.Logo,
+.tcentra {
+	text-align: center;
+}
+
+.blanc,
+div.Lista ul li:hover,
+.idioma:hover,
+div.Lista ul a:visited {
+	color: white;
+}
+
+/* boton */
+
+/* Menu */
+.left {
+	height: 100%;
+	left: 0;
+	top: 0;
+	transition: right 2s ease;
+}
+
+.black {
+	background-color: #333333;
+}
+
+.Logo {
+	padding: 50px 50px 30px;
+}
+
+.Logo img {
+	width: 80px;
+	border-radius: 50%;
+}
+
+.Lista ul li {
+	list-style-type: none;
+	text-decoration: none;
+	display: block;
+	padding: 20px;
+	transition: all 0.5s ease;
+	border-radius: 10px;
+}
+
+.Lista ul li:hover {
+	background-color: yellowgreen;
+}
+
+.Lista ul a {
+	text-decoration: none;
+}
+
+.idioma:hover {
+	background-color: yellowgreen;
+}
+
+/* Pagina Style */
+#pagina {
+	margin-left: 250px;
+}
+
+.fondo1 {
+	background-image: url(../img/background.jpg);
+	height: 280px;
+	padding: 100px 20px;
+}
+
+.fblanc {
+	background-color: white;
+}
+
+.finestra {
+	border: 5px solid yellowgreen;
+	border-left: none;
+	border-right: none;
+	width: 90%;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.letra40,
+.letra20 {
+	font-size: 40px;
+}
+
+.lh15 {
+	line-height: 100px;
+}
+
+.Menu,
+.Menu2 {
+	width: 90%;
+	margin: 30px auto 0;
+}
+
+.bordermenu,
+.Menu {
+	border: 5px solid yellowgreen;
+	border-left: none;
+	border-top: none;
+	border-right: none;
+}
+
+.img {
+	width: 100%;
+}
+
+.p40 {
+	padding: 40px;
+}
+
+.m30 {
+	margin: 30px;
+}
+
+/* Otro Style */
+#listaIdioma {
+	background-color: sienna;
+	border: 1px solid violet;
+	border-radius: 50px;
+}
+
+.noneLista {
+	display: none;
+}
+
+#botonIdioma {
+	color: white;
+}
+
+.Lista ul li a,
+.Lista ul li a:visited {
+	color: white;
+}
+
+
+/************************************************/
+#Guest_Book input[type="text"],
+textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#Guest_Book input[type="submit"] {
+	background: #333;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background: #555;
+}
+
+.error {
+	color: red;
+	font-weight: 800;
+}
+.guestBook th{
+	background-color: grey;
+	color:white;
+}
+.guestBook th,
+td {
+	border: 1px solid black;
+	padding: 8px;
+}
+
+.guestBook table {
+	border-collapse: collapse;
+	background-color: ghostwhite;
+	margin-bottom: 150px;
+	overflow: auto;
+}
+#Guest_Book .text {
+    left: 50%;
+    text-align: center;
+    font-size: 60px;
+    color:  #333;
+}
+#Guest_Book #cometario{
+	position: absolute;
+    left: 40%;
+}
+#Guest_Book h3{
+	font-size: 30px;
+	text-align: center;
+}
+
+
+/**************************************************************************************/
+
+.iniciar .Menu {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.iniciar .Menu h2.letra20 {
+    font-size: 20px;
+    color: #333;
+}
+
+.iniciar .Menu2 {
+    display: flex;
+    justify-content: center;
+    padding: 40px; /* p40 */
+}
+
+.iniciar .bordermenu {
+    border: 1px solid #ddd;
+    padding: 30px; /* m30 */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
-    height: 100%;
-    background-color: #04252E;
-    position: absolute;
-    background-image: url('');
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    z-index: -1;
+    max-width: 400px;
 }
 
-.letraYellow {
-    color: #AFC966;
+.iniciar .input-group {
+    margin-bottom: 15px;
 }
 
-.alert {
-    font-weight: 600;
-    font-size: 25px;
+.iniciar .input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.iniciar .input-group input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.iniciar button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.iniciar button:hover {
+    background-color: #0056b3;
+}
+.iniciar .input-group select {
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.mantent table {
+	border:1px solid black;
+	width: 100%;
+}
+.mantent table th{
+	border:1px solid black;
 }
