@@ -1,4 +1,3 @@
 # QcepNew
 Project Qcep
-
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+傻子
