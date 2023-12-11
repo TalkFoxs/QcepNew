@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+{"version":3,"sources":["../../sass/base/_base.scss","main.css","../../sass/layout/_header.scss"],"names":[],"mappings":"AAAA;EACI,UAAA;EACA,cAAA;ACCJ;;ACHA;EACI,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,8BAAA;MAAA,2BAAA;UAAA,6BAAA;EACA,2BAAA;MAAA,wBAAA;UAAA,qBAAA;EACA,yBAAA;ADMJ;ACJQ;EACI,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,qBAAA;ADMZ;ACLY;EACI,mBAAA;ADOhB","file":"main.css"}
+=======
+{"version":3,"sources":["../../sass/base/_base.scss","main.css","../../sass/layout/_header.scss"],"names":[],"mappings":"AAAA;EACI,UAAA;EACA,cAAA;ACCJ;;ACHA;EACI,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,2BAAA;MAAA,wBAAA;UAAA,qBAAA;EACA,uBAAA;EACA,YAAA;EACA,aAAA;ADMJ;ACJI;EACI,oBAAA;EAAA,oBAAA;EAAA,aAAA;EACA,qBAAA;MAAA,kBAAA;UAAA,yBAAA;ADMR;ACLQ;EACI,qBAAA;ADOZ;ACNY;EACI,mBAAA;EACA,kBAAA;ADQhB;ACLY;EACI,uBAAA;EACA,YAAA;EACA,kBAAA;ADOhB;ACLY;;;EAGI,YAAA;ADOhB","file":"main.css"}
+>>>>>>> a145bfd (Configuracion Basico sobre la pagina HOME)
