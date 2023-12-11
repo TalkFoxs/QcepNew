@@ -52,10 +52,10 @@ create table avaluacio(
 
 create table avaluacions(
 	avaluacio_tipus varchar(200) not null primary key,
-    usuari_username varchar(100) not null,
+    usuari_email varchar(100) not null,
     proces_nom varchar(100) not null,
     foreign key(avaluacio_tipus) references avaluacio(tipus),
-    foreign key(usuari_username) references usuari(username),
+    foreign key(usuari_email) references usuari(email),
     foreign key(proces_nom) references proces(nom)
 );
 
