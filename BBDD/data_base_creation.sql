@@ -4,9 +4,9 @@ create database qcep character set utf8mb4 collate utf8mb4_spanish_ci;
 use qcep;
 
 create table usuari(
-	username varchar(100)primary key,
-    password varchar(200) not null,
-    email varchar(100) not null,
+	email varchar(200)primary key,
+    password varchar(100) not null,
+    username varchar(50) not null,
     es_administrador boolean not null
 );
 
