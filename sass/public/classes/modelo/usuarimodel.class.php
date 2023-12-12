@@ -21,16 +21,16 @@ class UsuariModel implements CRUDable
         if ($mysqli->connect_errno) {
             die("Failed to connect to MySQL: " . $mysqli->connect_error);
         }
-        $username = $obj->gmail;
-        $password = $obj->password;
+        $email = $obj->email;
+        $password = $obj->pass;
         $userContra = $mysqli->prepare("SELECT email,password,username,es_administrador FROM qcep where email = ?");
-        $userContra->bind_param("s", $username);
+        $userContra->bind_param("s", $email);
         $userContra->execute();
         $result = $userContra->get_result();
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-            if ($user['email'] === $username && $user['password'] === $password) {
+            if ($user['email'] === $email && $user['password'] === $password) {
                 $mysqli->close();
                 $usuarioDato = [
                     'id' => $user['id'],

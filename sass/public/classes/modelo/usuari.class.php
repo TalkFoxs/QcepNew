@@ -14,7 +14,7 @@ class Usuari
         $this->email = $email;
         $this->pass = $pass;
         $this->username = $username;
-        $this ->admin = $admin;
+        $this->admin = $admin;
     }
 }
 
