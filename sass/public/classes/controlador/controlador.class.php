@@ -82,7 +82,7 @@ class Controlador {
     function queIdioma() {
         
         if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['lang'])) {
-            $queIdioma = sanitize($_GET['lang']);
+            $queIdioma = $this->sanitize($_GET['lang']);
             $idiomaActive = [
                 "es",
                 "cn",
