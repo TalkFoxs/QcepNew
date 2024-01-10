@@ -13,6 +13,7 @@ $client->setClientSecret($clientSecret);
 $client->setRedirectUri($redirectUrl);
 $client->addScope('profile');
 $client->addScope('email');
+$client->addScope('https://www.googleapis.com/auth/drive');
 
 //$_GET['code']的'code' 是取得 [授權碼]
 if (isset($_GET['code'])) {

@@ -19,23 +19,23 @@ class UserController extends Controlador
 
     public function login()
     {
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["username"] && $_POST["password"]) {
-            $username = $this->sanitize($_POST["username"]);
-            $password = $this->sanitize($_POST["password"]);
-            $usuari = new Usuari($username, $password, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+        if(isset($_SESSION["user_info"]["email"])){
+            $email = $this->sanitize($_SESSION["user_info"]["email"]);
+            $name = $this->sanitize($_SESSION["user_info"]["name"]);
+            $usuari = new Usuari($email,$name, NULL);
             $conectar = new UsuariModel();
             $status = $conectar->read($usuari);
-            if ($status != false && $status['status'] != 0) {
-                $_SESSION['datos'] = $status;
+            if ($status != false) {
                 $home = new HomeController();
-                $home->show();
-            } else {
-                $fitxerDeTraduccions = $this->queIdioma();
-                $loginVista = new LoginVista();
-                $loginVista->show($fitxerDeTraduccions, true);
-            }
-        }
+                    $home->show();
+            }else{
+                echo"No existe tu usuario";
+            }}
+                  
     }
+
+
+
 
     public function loginOut()
     {
@@ -200,7 +200,7 @@ class UserController extends Controlador
         $client->setRedirectUri($redirectUrl);
         $client->addScope('profile');
         $client->addScope('email');
-        echo "Login";
+        $client->addScope('https://www.googleapis.com/auth/drive');
         if (isset($_GET['code'])) {
             $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
             $client->setAccessToken($token);
@@ -213,35 +213,22 @@ class UserController extends Controlador
 
 
         } else {
-            // 生成登录 URL 并重定向或输出链接
             $loginUrl = $client->createAuthUrl();
             header('Location: ' . $loginUrl);
             exit();
         }
     }
-    // public function getUserInfo($accessToken) {
-    //     $userInfoEndpoint = 'https://www.googleapis.com/oauth2/v3/userinfo';
-    
-    //     $ch = curl_init($userInfoEndpoint);
-    //     curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $accessToken]);
-    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    //     $userInfoResponse = curl_exec($ch);
-    
-    //     if ($userInfoResponse === false) {
-    //         throw new Exception("Failed to retrieve user info. cURL error: " . curl_error($ch));
-    //     }
-    
-    //     return json_decode($userInfoResponse, true);
-    // }
+
     
     public function userGoogle($params) {
         try {
+            //关于URL传送信息检测，如果没有code则返回NULL
             $code = isset($params['code']) ? $params['code'] : null;
-    
+            //触发异常如果没有检查到code
             if (!$code) {
                 throw new Exception("Authorization code not found.");
             }
-    
+            //关于软件令牌和放回的url地址
             $clientID = '241965399440-59ek83pl2u1scemevj8pbf868ctlgm2v.apps.googleusercontent.com';
             $clientSecret = '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';
             $redirectUrl = 'http://localhost/qcep/QcepNew/sass/public/index.php';
@@ -265,9 +252,6 @@ class UserController extends Controlador
             }
     
             $tokenData = json_decode($response, true);
-            echo "<pre>";
-            var_dump($tokenData);
-            echo "</pre>";
             if (!isset($tokenData['access_token'])) {
                 throw new Exception("Access token not found in response.");
             }
@@ -275,14 +259,23 @@ class UserController extends Controlador
             $accessToken = $tokenData['access_token'];
     
             $userInfo = $this->getUserInfo($accessToken);
-
-            // 返回用户信息
-            if($userInfo == null){
-                echo "1";
-            }
-            echo "<pre>";
             var_dump($userInfo);
-            echo "</pre>";
+            //储存用户信息到一个会话中
+            $_SESSION['user_info'] = $userInfo;
+            //储存用户权限令牌到一个会话
+            $_SESSION['access_token'] = $accessToken;
+            
+
+            /****************************************************
+            // // 测试：返回用户信息 -》成功获取用户信息和谷歌云盘权限√
+            // if($userInfo == null){
+            //     echo "1";
+            // }
+            // echo "<pre>";
+            // var_dump($userInfo);
+            // echo "</pre>";
+            ******************************************************/
+            header("Location: http://localhost/qcep/QcepNew/sass/public/index.php?user/login");
             // return $userInfo;
     
         } catch (Exception $e) {

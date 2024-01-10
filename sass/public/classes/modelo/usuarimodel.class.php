@@ -21,28 +21,65 @@ class UsuariModel implements CRUDable
         if ($mysqli->connect_errno) {
             die("Failed to connect to MySQL: " . $mysqli->connect_error);
         }
-        $email = $obj->email;
-        $password = $obj->pass;
-        $userContra = $mysqli->prepare("SELECT email,password,username,es_administrador FROM qcep where email = ?");
+        $email =$obj->email;
+        $nombre =$obj ->username;
+
+        $userContra = $mysqli->prepare("SELECT email,username,es_administrador FROM usuari where email = ?");
+
+        if ($mysqli->connect_errno) {
+            die("Failed to connect to MySQL: " . $mysqli->connect_error);
+        }
         $userContra->bind_param("s", $email);
         $userContra->execute();
         $result = $userContra->get_result();
 
         if ($result->num_rows > 0) {
-            $user = $result->fetch_assoc();
-            if ($user['email'] === $email && $user['password'] === $password) {
-                $mysqli->close();
-                $usuarioDato = [
-                    'id' => $user['id'],
-                    'imatge' => $user['imatge'],
-                    'status'=>$user['status']
-                ];
-                return $usuarioDato;
+                $user = $result->fetch_assoc();
+                var_dump($user);
+                if ($user['email'] === $email) {
+                    $mysqli->close();
+                    $usuarioDato = [
+                        'email' => $user['email'],
+                        'username' => $user['username'],
+                        'es_administrador'=>$user['es_administrador']
+                    ];
+                    return $usuarioDato;
+                }
             }
-        }
-        $userContra->close();
-        $mysqli->close();
-        return false;
+            $userContra->close();
+            $mysqli->close();
+            return false;
+
+
+        // $mysqli = mysqli_connect(self::HOST, self::USEREAD, self::PASSREAD, self::DB);
+        // if ($mysqli->connect_errno) {
+        //     die("Failed to connect to MySQL: " . $mysqli->connect_error);
+        // }
+        // $email = $obj->email;
+        // $password = $obj->pass;
+        // $userContra = $mysqli->prepare("SELECT email,password,username,es_administrador FROM usuari where email = ?");
+        // if ($userContra === false) {
+        //     die("Error in SQL query: " . $mysqli->error);
+        // }
+        // $userContra->bind_param("s", $email);
+        // $userContra->execute();
+        // $result = $userContra->get_result();
+        // if ($result->num_rows > 0) {
+        //     $user = $result->fetch_assoc();
+        //     var_dump($user);
+        //     if ($user['email'] === $email && $user['password'] === $password) {
+        //         $mysqli->close();
+        //         $usuarioDato = [
+        //             'email' => $user['email'],
+        //             'username' => $user['username'],
+        //             'es_administrador'=>$user['es_administrador']
+        //         ];
+        //         return $usuarioDato;
+        //     }
+        // }
+        // $userContra->close();
+        // $mysqli->close();
+        // return false;
     }
 
     public function create($obj)

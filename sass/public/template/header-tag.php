@@ -2,8 +2,9 @@
 	<div class="black left height">
 		<div class="Logo">
 			<?php 
-                if(isset($_SESSION['datos'])){
-                  echo "<a href='?user/loginOut'><img src='{$_SESSION['datos']['imatge']}'></a>";                  
+                if(isset($_SESSION['user_info'])){
+                  echo "<a href='?user/loginOut'><img src='{$_SESSION["user_info"]["picture"]}'></a></br>";
+				  echo "<p style='color:white;'>{$_SESSION["user_info"]["name"]}</p>";
                 } else {
                     echo "<img src='./img/logo.png'>";
                 }
