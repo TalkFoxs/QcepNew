@@ -192,7 +192,7 @@ class UserController extends Controlador
     {
         $clientID = '241965399440-59ek83pl2u1scemevj8pbf868ctlgm2v.apps.googleusercontent.com';
         $clientSecret = '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';
-        $redirectUrl = 'http://localhost/qcep/QcepNew/sass/public/index.php';
+        $redirectUrl = 'https://www.qceproba.com/';
 
         $client = new Google_Client();
         $client->setClientId($clientID);
@@ -231,7 +231,7 @@ class UserController extends Controlador
             //关于软件令牌和放回的url地址
             $clientID = '241965399440-59ek83pl2u1scemevj8pbf868ctlgm2v.apps.googleusercontent.com';
             $clientSecret = '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';
-            $redirectUrl = 'http://localhost/qcep/QcepNew/sass/public/index.php';
+            $redirectUrl = 'https://www.qceproba.com/';
     
             $tokenEndpoint = 'https://oauth2.googleapis.com/token';
             $tokenParams = [
@@ -243,6 +243,7 @@ class UserController extends Controlador
             ];
     
             $ch = curl_init($tokenEndpoint);
+            curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $tokenParams);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($ch);
@@ -275,7 +276,7 @@ class UserController extends Controlador
             // var_dump($userInfo);
             // echo "</pre>";
             ******************************************************/
-            header("Location: http://localhost/qcep/QcepNew/sass/public/index.php?user/login");
+            header("Location: https://www.qceproba.com/");
             // return $userInfo;
     
         } catch (Exception $e) {
