@@ -15,5 +15,9 @@ try {
     $vError = new ErrorVista();
     $vError->show($e);
 }
-
+/*
+$userModel = new UsuariModel();
+$result = $userModel->read();
+var_dump(count($result));
+*/
 ?>

@@ -8,47 +8,47 @@ class UsuariModel implements CRUDable
     const USEREAD = 'usr_consulta';
 
     const PASSREAD = '2024@Thos';
-    
+
     const USERINSERT = 'usr_generic';
-    
+
     const PASSRINSERT = '2024@Thos';
 
     const DB = 'qcep';
 
-    public function read($obj)
+    public function read($obj = null)
     {
         $mysqli = mysqli_connect(self::HOST, self::USEREAD, self::PASSREAD, self::DB);
-        if ($mysqli->connect_errno) {
-            die("Failed to connect to MySQL: " . $mysqli->connect_error);
-        }
-        $email =$obj->email;
-        $nombre =$obj ->username;
-
-        $userContra = $mysqli->prepare("SELECT email,username,es_administrador FROM usuari where email = ?");
 
         if ($mysqli->connect_errno) {
             die("Failed to connect to MySQL: " . $mysqli->connect_error);
         }
-        $userContra->bind_param("s", $email);
+
+        $userContra = $mysqli->prepare("SELECT email, username, es_administrador FROM usuari");
+
+        if ($userContra === false) {
+            die("Error in preparing the SQL query: " . $mysqli->error);
+        }
+
         $userContra->execute();
+
         $result = $userContra->get_result();
 
         if ($result->num_rows > 0) {
-                $user = $result->fetch_assoc();
-                var_dump($user);
-                if ($user['email'] === $email) {
-                    $mysqli->close();
-                    $usuarioDato = [
-                        'email' => $user['email'],
-                        'username' => $user['username'],
-                        'es_administrador'=>$user['es_administrador']
-                    ];
-                    return $usuarioDato;
-                }
-            }
+            // Fetch the result set as an associative array
+            $rows = $result->fetch_all(MYSQLI_ASSOC);
+
+            // Close the prepared statement and the database connection
             $userContra->close();
             $mysqli->close();
-            return false;
+
+            return $rows;
+        }
+
+        // If no rows are found, close the statement and the database connection
+        $userContra->close();
+        $mysqli->close();
+
+        return false;
 
 
         // $mysqli = mysqli_connect(self::HOST, self::USEREAD, self::PASSREAD, self::DB);
@@ -95,27 +95,27 @@ class UsuariModel implements CRUDable
         $query = "INSERT INTO tbl_usuaris (email, password, tipusIdent, numeroIdent, nom, cognoms, sexe, naixement, adreca, codiPostal, poblacio, provincia, telefon, imatge, navegador, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $mysqli->prepare($query);
-        if (! $stmt) {
+        if (!$stmt) {
             die("Error in query preparation: " . $mysqli->error);
         }
 
         // Vincular parámetros y comprobar si tiene éxito
-        if (! $stmt->bind_param("ssssssssssssssss", $obj->user, $obj->password, $obj->tipuIdent, $obj->dni, $obj->nom, $obj->cognom, $obj->sexe, $obj->naxiament, $obj->adreca, $obj->codiPostal, $obj->poblacio, $obj->provincia, $obj->telefon, $obj->imatge, $obj->navegador, $obj->plataforma)) {
+        if (!$stmt->bind_param("ssssssssssssssss", $obj->user, $obj->password, $obj->tipuIdent, $obj->dni, $obj->nom, $obj->cognom, $obj->sexe, $obj->naxiament, $obj->adreca, $obj->codiPostal, $obj->poblacio, $obj->provincia, $obj->telefon, $obj->imatge, $obj->navegador, $obj->plataforma)) {
             die("Error in binding parameters: " . $stmt->error);
         }
         $stmt->execute();
-       
+
 
         // Cerrrar la conexion de BBDD
         $stmt->close();
         $mysqli->close();
 
-        
-/*
- * Utlizan .- bind_param ("s",$valor) repetit n vegades. El método bind_param vincula todos los parámetros a la vez y solo se puede llamar una vez. 
- * No se admiten múltiples llamadas para agregar nuevos parámetros vinculantes.Pero podemos utiliza el metodo call_user_func_array hacer algo como pide.Pero gastara mucho tiempo.
- * */
-//         $params = [
+
+        /*
+         * Utlizan .- bind_param ("s",$valor) repetit n vegades. El método bind_param vincula todos los parámetros a la vez y solo se puede llamar una vez. 
+         * No se admiten múltiples llamadas para agregar nuevos parámetros vinculantes.Pero podemos utiliza el metodo call_user_func_array hacer algo como pide.Pero gastara mucho tiempo.
+         * */
+        //         $params = [
 //             'email' => $obj->user,
 //             'password' => $obj->password,
 //             'tipusIdent' => $obj->tipuIdent,
@@ -133,76 +133,77 @@ class UsuariModel implements CRUDable
 //             'navegador' => $obj->navegador,
 //             'plataforma' => $obj->plataforma
 //         ];
-        
-//         foreach ($params as $key => $value) {
+
+        //         foreach ($params as $key => $value) {
 //             $query = "INSERT INTO tbl_usuaris ($key) VALUES (?)";
 //             $stmt = $mysqli->prepare($query);
 //             if (!$stmt) {
 //                 die("Error in query preparation: " . $mysqli->error);
 //             }
 //         $stmt->bind_param("s", $value);
-        
-//         if (!$stmt->execute()) {
+
+        //         if (!$stmt->execute()) {
 //             die("Error in query execution: " . $stmt->error);
 //         }
-            
+
         /*
          * Utilizan bind_param("sssssis", $array), no se puede añadir directamenta el array, necesitamos utilizar el call_user_func_array
          * 
          * */
-//         $mysqli = mysqli_connect(self::HOST, self::USERINSERT, self::PASSRINSERT, self::DB);
+        //         $mysqli = mysqli_connect(self::HOST, self::USERINSERT, self::PASSRINSERT, self::DB);
 //         if ($mysqli->connect_errno) {
 //             die("Failed to connect to MySQL: " . $mysqli->connect_error);
 //         }
-        
-//         $query = "INSERT INTO tbl_usuaris (email, password, tipusIdent, numeroIdent, nom, cognoms, sexe, naixement, adreca, codiPostal, poblacio, provincia, telefon, imatge, navegador, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
-//         $stmt = $mysqli->prepare($query);
+
+        //         $query = "INSERT INTO tbl_usuaris (email, password, tipusIdent, numeroIdent, nom, cognoms, sexe, naixement, adreca, codiPostal, poblacio, provincia, telefon, imatge, navegador, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        //         $stmt = $mysqli->prepare($query);
 //         if (!$stmt) {
 //             die("Error in query preparation: " . $mysqli->error);
 //         }
-        
-//         $params = [$obj->user, $obj->password, $obj->tipuIdent, $obj->dni, $obj->nom, $obj->cognom, $obj->sexe, $obj->naxiament, $obj->adreca, $obj->codiPostal, $obj->poblacio, $obj->provincia, $obj->telefon, $obj->imatge, $obj->navegador, $obj->plataforma];
-        
-//         array_unshift($params, str_repeat("s", count($params)));
-        
-//         call_user_func_array([$stmt, 'bind_param'], $params);
-        
-//         $stmt->execute();
-        
-//         $stmt->close();
+
+        //         $params = [$obj->user, $obj->password, $obj->tipuIdent, $obj->dni, $obj->nom, $obj->cognom, $obj->sexe, $obj->naxiament, $obj->adreca, $obj->codiPostal, $obj->poblacio, $obj->provincia, $obj->telefon, $obj->imatge, $obj->navegador, $obj->plataforma];
+
+        //         array_unshift($params, str_repeat("s", count($params)));
+
+        //         call_user_func_array([$stmt, 'bind_param'], $params);
+
+        //         $stmt->execute();
+
+        //         $stmt->close();
 //         $mysqli->close();
-        
- /*
-  * 5.- passant paràmetres directament a l'execute. No puede pasar parámetros directamente 
-  * al método de ejecución porque el método de ejecución no tiene parámetros en mysqli. Pero podemos utilizar PDO
-  * */       
-//         try {
+
+        /*
+         * 5.- passant paràmetres directament a l'execute. No puede pasar parámetros directamente 
+         * al método de ejecución porque el método de ejecución no tiene parámetros en mysqli. Pero podemos utilizar PDO
+         * */
+        //         try {
 //             $pdo = new PDO("mysql:host=" . self::HOST . ";dbname=" . self::DB, self::USERINSERT, self::PASSRINSERT);
 //             $query = "INSERT INTO tbl_usuaris (email, password, tipusIdent, numeroIdent, nom, cognoms, sexe, naixement, adreca, codiPostal, poblacio, provincia, telefon, imatge, navegador, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            
-//             $stmt = $pdo->prepare($query);
-            
-         
-//             $stmt->execute([$obj->user, $obj->password, $obj->tipuIdent, $obj->dni, $obj->nom, $obj->cognom, $obj->sexe, $obj->naxiament, $obj->adreca, $obj->codiPostal, $obj->poblacio, $obj->provincia, $obj->telefon, $obj->imatge, $obj->navegador, $obj->plataforma]);
+
+        //             $stmt = $pdo->prepare($query);
+
+
+        //             $stmt->execute([$obj->user, $obj->password, $obj->tipuIdent, $obj->dni, $obj->nom, $obj->cognom, $obj->sexe, $obj->naxiament, $obj->adreca, $obj->codiPostal, $obj->poblacio, $obj->provincia, $obj->telefon, $obj->imatge, $obj->navegador, $obj->plataforma]);
 //         } catch (PDOException $e) {
 //             die("Failed to connect to MySQL: " . $e->getMessage());
 //         }
-        
-        
+
+
     }
 
-    public function update($id){
+    public function update($id)
+    {
         $mysqli = mysqli_connect(self::HOST, self::USERINSERT, self::PASSRINSERT, self::DB);
         if ($mysqli->connect_errno) {
             die("Failed to connect to MySQL: " . $mysqli->connect_error);
         }
         $query = "update tbl_usuaris set status=1 where id = ?";
         $stmt = $mysqli->prepare($query);
-        if (! $stmt) {
+        if (!$stmt) {
             die("Error in query preparation: " . $mysqli->error);
         }
-        if (! $stmt->bind_param("s", $id)) {
+        if (!$stmt->bind_param("s", $id)) {
             die("Error in binding parameters: " . $stmt->error);
         }
         $stmt->execute();
@@ -215,7 +216,7 @@ class UsuariModel implements CRUDable
         if ($mysqli->connect_errno) {
             die("Failed to connect to MySQL: " . $mysqli->connect_error);
         }
-        
+
         $email = $mysqli->real_escape_string($email);
         $query = "SELECT COUNT(*) FROM tbl_usuaris WHERE email = ?";
         $stmt = $mysqli->prepare($query);
@@ -225,10 +226,11 @@ class UsuariModel implements CRUDable
         $stmt->fetch();
         $stmt->close();
         $mysqli->close();
-        
+
         return $userCount > 0;
     }
     public function delete($obj)
-    {}
+    {
+    }
 }
 

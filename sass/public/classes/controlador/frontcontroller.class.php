@@ -9,19 +9,19 @@ class FrontController extends Controlador
     {
         $params = NULL;
         if (isset($_GET['code'])) {
-            // 如果存在 'code' 参数，将请求路由到 Google 授权回调处理器
+            // Si existe el Code pues va en ?userGoogle
             $controller_name = "usercontroller";
             $action = "userGoogle";
 
-            // 在这里可以将其他参数添加到 $params 数组中，以传递给回调处理器
+
             $params = ['code' => $_GET['code']];
             foreach ($_GET as $key => $value) {
-                // 排除 'code' 参数，因为它已经单独添加
+
                 if ($key !== 'code') {
                     $params[$key] = $value;
                 }
             }
-            // 后续代码保持不变，调用指定的控制器和操作
+
         } elseif (count($_GET) == 0) {
             $action = self::DEFAULT_ACTION;
             $controller_name = self::DEFAULT_CONTROLLER;

@@ -1,4 +1,6 @@
 
+<?php
+?>
 <main>
 	<div id="pagina">
 		<section>

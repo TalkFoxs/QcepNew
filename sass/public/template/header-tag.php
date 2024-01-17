@@ -1,4 +1,5 @@
 <header class=" fixed w250 left border ">
+	
 	<div class="black left height">
 		<div class="Logo">
 			<?php 
@@ -10,9 +11,6 @@
                 }
 ?>
 		</div>
-		<div class="lcentra blanc Nom">
-			<strong>PHP</strong>
-		</div>
 		<div class="Lista lcentra f20">
 			<ul>
 				<a href="./index.php"><li><?php echo($textos["Home"]);?></li></a>
@@ -20,9 +18,8 @@
 				<li><a href="#"><?php echo(($textos["PHP"]));?></a></li>
 				<li><a href=""><?php echo(($textos["Exercici"]));?></a></li>
 				<?php 
-                if(isset($_SESSION['datos'])){
-                  echo "<li><a href='?contact/show'>".$textos["Contactar"]."</a></li>";
-                  echo "<li><a href='?contact/read'>Manteniment</a></li>";
+                if(isset($_SESSION['user_info'])){
+				  echo "<li><a href='?funtion/show'>Function</a></li>";
                 }
                 ?>
 				
