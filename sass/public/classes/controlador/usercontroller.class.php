@@ -95,7 +95,15 @@ class UserController extends Controlador
         }
     }
 
+    public function proba()
+    {
+        $email = "2002duguxiu@gmail.com";
 
+
+        $userModel = new UsuariModel();
+        $result = $userModel->read();
+        var_dump($result);
+    }
     public function userGoogle($params)
     {
         try {
@@ -144,6 +152,7 @@ class UserController extends Controlador
             for ($i = 0; $i < count($result); $i++) {
                 if ($result[$i]["email"] === $userInfo["email"]) {
                     $esta = true;
+                    $_SESSION['admin']=$result[$i]['es_administrador'];
                 }
             }
 
@@ -152,7 +161,6 @@ class UserController extends Controlador
                 $_SESSION['user_info'] = $userInfo;
                 //Guardar el token de usuario en la session
                 $_SESSION['access_token'] = $accessToken;
-
 
                 /****************************************************
                 // // Prova：Retornar los datos de usuario -->Consegido tener los datos de usuario y permiso de Google Drive√
@@ -166,7 +174,7 @@ class UserController extends Controlador
                 header("Location: https://www.qceproba.com/");
                 // return $userInfo;
             } else {
-                
+
                 echo "<script>alert('No esta unido en la WEP, pide el administrador que añade tu usuario'); window.location.href = 'https://www.qceproba.com/';</script>";
             }
 

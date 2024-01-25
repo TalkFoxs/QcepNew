@@ -9,7 +9,16 @@ button {
     font-size: 16px;
     font-weight: 600;
 }
-
+.Configuracion a{
+    color: black;
+    text-decoration: none;
+}
+button a{
+    color: white;
+}
+.ok{
+    color: greenyellow;
+}
 .gsi-material-button {
     -moz-user-select: none;
     -webkit-user-select: none;

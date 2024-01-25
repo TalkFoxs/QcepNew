@@ -174,8 +174,12 @@ input[type="submit"]:hover {
 	background: #555;
 }
 
-.error {
+.oktext {
 	color: red;
+	font-weight: 800;
+}
+.ok{
+	color: green;
 	font-weight: 800;
 }
 .guestBook th{
