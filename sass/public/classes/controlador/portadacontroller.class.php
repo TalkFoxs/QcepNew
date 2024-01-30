@@ -16,7 +16,15 @@ class PortadaController extends Controlador
             $errorVista->show($texto);
         }
     }
-
+    public function addShow()
+    {
+        $queIdioma = $this->queIdioma();
+        if ($_SESSION["admin"] === 1) {
+            $protadaVista = new PortadaVista();
+            $html = $this->addHtml();
+            $protadaVista->show($queIdioma, $html, '', '');
+        }
+    }
     public function showupdate()
     {
         $queIdioma = $this->queIdioma();
@@ -33,6 +41,32 @@ class PortadaController extends Controlador
                 $html = $this->configShow($result);
                 $protadaVista->show($queIdioma, $html, '', '');
             }
+        }
+    }
+
+    public function add()
+    {
+        $queIdioma = $this->queIdioma();
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id']) && isset($_POST['nom']) && isset($_POST['nom']) && isset($_POST['descripcio']) && isset($_POST['enllac'])) {
+            $id = (int)$this->sanitize($_POST["id"]);
+            $nom = $this->sanitize($_POST["nom"]);
+            $icono = $this->sanitize($_FILES["icono"]["name"]);
+            $descripcio = $this->sanitize($_POST["descripcio"]);
+            $enllac = $this->sanitize($_POST["enllac"]);
+            if ($_FILES['icono']['error'] === 0) {
+                $fileInputName = 'icono';
+                $uploadDirectory = './img/portada/';
+                $icono = $this->saveUploadedFile($fileInputName, $uploadDirectory);
+            }
+            $portada = new Portada($id, $nom, $icono, $descripcio, $enllac);
+            $protadaVista = new PortadaVista();
+            $protadaModel = new PortadaModel();
+            $result = $protadaModel->create($portada);
+            header("Location: https://www.qceproba.com/?portada/show");
+        } else {
+            $errorVista = new ErrorVista();
+            $texto = new Exception('No existe la portada que quieres modificar');
+            $errorVista->show($texto);
         }
     }
 
@@ -63,7 +97,6 @@ class PortadaController extends Controlador
                 $html = $this->configShow($show);
                 $protadaVista->show($queIdioma, $html, 'Update Correcto');
             } else {
-                
             }
         } else {
             $errorVista = new ErrorVista();
@@ -72,17 +105,73 @@ class PortadaController extends Controlador
         }
     }
 
+    public function delete()
+    {
+        $queIdioma = $this->queIdioma();
+        if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['uid'])) {
+            $id = $_GET["uid"];
+            $protadaVista = new PortadaVista();
+            $protadaModel = new PortadaModel();
+            $result = $protadaModel->delete($id);
+            if ($result == null) {
+                $errorVista = new ErrorVista();
+                $texto = new Exception('No existe la portada que quieres modificar');
+                $errorVista->show($texto);
+            } else {
+                $result = $protadaModel->read();
+                $html = $this->readHtml($result);
+                $protadaVista->show($queIdioma, $html, '', '');
+            }
+        }
+    }
+
+    public function addHtml()
+    {
+        $html = "<form action='?portada/add' method='post' enctype='multipart/form-data'>";
+
+        if ($_SESSION["admin"] === 1) {
+            $protadaModel = new PortadaModel();
+            $maxId = $protadaModel->maxId() + 1;
+
+            $html .= "<label>El ID que añades es: {$maxId}</label><br>";
+            $html .= "<input type='hidden' id='id' name='id' value='{$maxId}'><br>";
+
+            $html .= "<label>Pon el Nombre que quieres: </label><br>";
+            $html .= "<input id='nom' name='nom'><br>";
+
+            $html .= "<label for='icono'>Sube el imagen que quieres:</label>";
+            $html .= "<input type='file' name='icono' id='icono' accept='.png, .jpg'><br>";
+
+            $html .= "<label>Pon el descripcion: </label><br>";
+            $html .= "<input id='descripcio' name='descripcio'><br>";
+
+            $html .= "<label>Pon el enlace: </label><br>";
+            $html .= "<input id='enllac' name='enllac'><br>";
+
+            $html .= "<input type='submit' value='MODIFICAR'>";
+            $html = $html . " <a href='https://www.qceproba.com/?portada/show'>Volver</a>";
+        }
+
+        $html .= "</form>";
+
+        return $html;
+    }
 
 
     public function readHtml($obj)
     {
-        $html = "<button><a href='?portada/add'>ADD</a></button>";
+        $html = "<button><a href='?portada/addShow'>ADD</a></button>";
 
         foreach ($obj as $value) {
             $html .= "<table>";
 
             foreach ($value as $k => $var) {
-                if ($k !== "id") {
+                if ($k == "icono") {
+                    $html .= "<tr>";
+                    $html .= "<th>{$k}</th>";
+                    $html .= "<td><img class='iconoImg' src='{$var}'/></td>";
+                    $html .= "</tr>";
+                } else if ($k !== "id") {
                     $html .= "<tr>";
                     $html .= "<th>{$k}</th>";
                     $html .= "<td>{$var}</td>";
@@ -91,7 +180,7 @@ class PortadaController extends Controlador
             }
 
             $html .= "<tr>";
-            $html .= "<td colspan='2'><button type='button'><a href='?portada/showupdate&uid={$value["id"]}' method='GET'>Cambiar</a></button></td>";
+            $html .= "<td colspan='2' class='deletModi'><button type='button'><a href='?portada/showupdate&uid={$value["id"]}' method='GET'>Cambiar</a></button><button type='button'><a href='?portada/delete&uid={$value["id"]}' method='GET'>DELETE</a></button></td>";
             $html .= "</tr>";
 
             $html .= "</table>";
@@ -117,11 +206,10 @@ class PortadaController extends Controlador
                     $html .= "<input type='hidden' name='id' value='{$value}'>";
                     $html .= "<label>{$key}:{$value} <span class ='error'>El ID no se puede cambiar</span></label></br>";
                 }
-
-
             }
         }
         $html = $html . " <input type='submit' value='MODIFICAR'>";
+        $html = $html . " <a href='https://www.qceproba.com/?portada/show'>Volver</a>";
         $html = $html . "  </form>";
         return $html;
     }
@@ -157,8 +245,4 @@ class PortadaController extends Controlador
             return false;
         }
     }
-
-
-
 }
-?>
