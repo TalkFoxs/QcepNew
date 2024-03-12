@@ -47,6 +47,7 @@
 				<?php
 				if ($_SESSION["admin"] === 1) {
 					echo "<li><a href='?config/show'>Configuracion</a></li>";
+					echo "<li><a href='?proces/show'>Proceso</a></li>";
 				}
 				?>
 			</ul>

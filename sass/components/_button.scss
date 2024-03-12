@@ -9,19 +9,45 @@ button {
     font-size: 16px;
     font-weight: 600;
 }
-.Configuracion a{
-    color: black;
-    text-decoration: none;
+
+.insertModel {
+    label {
+        font-size: 16px; // 设置标签字体大小
+        color: #333; // 设置标签文字颜色
+        margin-bottom: 8px; // 设置标签与下方元素的间距
+    }
+
+    input {
+        padding: 10px; // 设置输入框内边距
+        font-size: 14px; // 设置输入框字体大小
+        border: 1px solid #ccc; // 设置输入框边框样式
+        border-radius: 4px; // 设置输入框边框圆角
+        width: 100%; // 让输入框宽度占满父容器
+        box-sizing: border-box; // 让边框和内边距不增加元素的实际宽度
+    }
+
+    input:hover,
+    input:focus {
+        border-color: #66afe9; // 设置悬停或焦点时的边框颜色
+        outline: none; // 清除获取焦点时的默认外边框
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
 }
-button a{
+
+button a {
     color: white;
 }
-.ok{
+
+.ok {
     color: greenyellow;
 }
 
-.deletModi{
-    button{
+.deletModi {
+    button {
         width: 130px;
     }
 }

@@ -10,10 +10,11 @@
         <div class="bordermenu m30">
             <h1>Configuracion<h1>
 
-            <ul class="Configuracion">
+            <ul class="insertModel">
                 <?php
                     if($_SESSION["admin"] === 1){
                         echo "<li><a href='?portada/show'>Portada</a></li>";
+                        echo "<li><a href='?oraganizacio/show'>Organizacio</a></li>";
                         echo "<li><a href=''>Configuracion Usuario</a></li>";
                         echo "<li><a href=''>Configuracion Grupos</a></li>";
                     }

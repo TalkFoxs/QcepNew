@@ -7,6 +7,15 @@
 body {
 	width: 100%;
 }
+.Logo img{
+	transition: 2s;
+}
+.Logo:hover img{
+	transform: rotate(360deg);
+	scale: 1.8;
+}
+
+
 
 .fixed,
 .left {
@@ -178,14 +187,17 @@ input[type="submit"]:hover {
 	color: red;
 	font-weight: 800;
 }
-.ok{
+
+.ok {
 	color: green;
 	font-weight: 800;
 }
-.guestBook th{
+
+.guestBook th {
 	background-color: grey;
-	color:white;
+	color: white;
 }
+
 .guestBook th,
 td {
 	border: 1px solid black;
@@ -198,17 +210,20 @@ td {
 	margin-bottom: 150px;
 	overflow: auto;
 }
+
 #Guest_Book .text {
-    left: 50%;
-    text-align: center;
-    font-size: 60px;
-    color:  #333;
+	left: 50%;
+	text-align: center;
+	font-size: 60px;
+	color: #333;
 }
-#Guest_Book #cometario{
+
+#Guest_Book #cometario {
 	position: absolute;
-    left: 40%;
+	left: 40%;
 }
-#Guest_Book h3{
+
+#Guest_Book h3 {
 	font-size: 30px;
 	text-align: center;
 }
@@ -217,75 +232,118 @@ td {
 /**************************************************************************************/
 
 .iniciar .Menu {
-    text-align: center;
-    margin-bottom: 20px;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 .iniciar .Menu h2.letra20 {
-    font-size: 20px;
-    color: #333;
+	font-size: 20px;
+	color: #333;
 }
 
 .iniciar .Menu2 {
-    display: flex;
-    justify-content: center;
-    padding: 40px; /* p40 */
+	display: flex;
+	justify-content: center;
+	padding: 40px;
+	/* p40 */
 }
 
 .iniciar .bordermenu {
-    border: 1px solid #ddd;
-    padding: 30px; /* m30 */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+	border: 1px solid #ddd;
+	padding: 30px;
+	/* m30 */
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 400px;
 }
 
 .iniciar .input-group {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .iniciar .input-group label {
-    display: block;
-    margin-bottom: 5px;
+	display: block;
+	margin-bottom: 5px;
 }
 
-.iniciar .input-group input{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.iniciar .input-group input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
 }
 
 .iniciar button {
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	background-color: #333;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 .iniciar button:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
+
 .iniciar .input-group select {
-    width: 100%; 
-    padding: 10px; 
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    color: black;
-    cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background-color: white;
+	color: black;
+	cursor: pointer;
 }
+
 .mantent table {
-	border:1px solid black;
+	border: 1px solid black;
 	width: 100%;
 }
-.mantent table th{
-	border:1px solid black;
+
+.mantent table th {
+	border: 1px solid black;
 }
-.iconoImg{
+
+.iconoImg {
 	width: 50px;
 }
+
+svg{
+	width: 0px;
+}
+
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px; 
+}
+
+.card {
+    background-color: #f5f5f5; 
+    border: 10px solid yellowgreen; 
+    border-left: 0px;
+    border-top: 0px;
+    border-radius: 10px; 
+    box-shadow: 0 8px 16px rgba(1, 95, 218, 0.7); 
+    padding: 70px; 
+}
+
+.card h2 {
+    margin: 0;
+}
+
+.card a {
+    text-decoration: none; 
+    color: #333; 
+}
+
+.card a:hover {
+    color: #007bff; 
+}
+
+

@@ -6,7 +6,7 @@
 		<section>
 			<div class="fondo1 ">
 				<div class="finestra ">
-					<h1 class="fblanc letra40 tcentra lh15 "><?php echo($textos["Bienvenido"]);?></h1>
+					<h1 class="fblanc letra40 tcentra lh15 ">Bienvenido a <?php echo($_SESSION["Organizacion"][0]['Nom']);?></h1>
 				</div>
 
 			</div>
@@ -15,7 +15,7 @@
 
 		<!--Section 2-->
 		<div class="Menu">
-			<h2 class="letra20"><?php echo($Menu)?></h2>
+			
 		</div>
 		<!--Menu1-->
 

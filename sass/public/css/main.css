@@ -8,6 +8,17 @@ body {
   width: 100%;
 }
 
+.Logo img {
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.Logo:hover img {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  scale: 1.8;
+}
+
 .fixed,
 .left {
   position: fixed;
@@ -236,12 +247,14 @@ td {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 40px; /* p40 */
+  padding: 40px;
+  /* p40 */
 }
 
 .iniciar .bordermenu {
   border: 1px solid #ddd;
-  padding: 30px; /* m30 */
+  padding: 30px;
+  /* m30 */
   border-radius: 8px;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -302,6 +315,40 @@ td {
   width: 50px;
 }
 
+svg {
+  width: 0px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #f5f5f5;
+  border: 10px solid yellowgreen;
+  border-left: 0px;
+  border-top: 0px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 8px 16px rgba(1, 95, 218, 0.7);
+          box-shadow: 0 8px 16px rgba(1, 95, 218, 0.7);
+  padding: 70px;
+}
+
+.card h2 {
+  margin: 0;
+}
+
+.card a {
+  text-decoration: none;
+  color: #333;
+}
+
+.card a:hover {
+  color: #007bff;
+}
+
 footer {
   position: fixed;
   left: 0;
@@ -331,7 +378,26 @@ button {
   font-weight: 600;
 }
 
-.Configuracion a {
+.insertModel label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+.insertModel input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.insertModel input:hover,
+.insertModel input:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+.insertModel a {
   color: black;
   text-decoration: none;
 }
